@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">安办 logo</title>
+  <desc id="desc">A quiet horizon line and a grounded check mark, for a calm task app.</desc>
+  <rect width="1024" height="1024" rx="224" fill="#F6F4EC"/>
+  <path d="M246 536c72-79 158-118 258-118 107 0 199 45 274 134" fill="none" stroke="#C8D1BE" stroke-width="82" stroke-linecap="round"/>
+  <path d="M322 624h380" stroke="#DAD9CC" stroke-width="48" stroke-linecap="round"/>
+  <path d="M353 487l120 120 232-264" fill="none" stroke="#1D1F1C" stroke-width="72" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="308" cy="361" r="36" fill="#60816B"/>
+  <circle cx="730" cy="647" r="28" fill="#D5A44D"/>
+</svg>

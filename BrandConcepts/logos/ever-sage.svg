@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">常青 logo</title>
+  <desc id="desc">A sage loop forming a leaf and a check, suggesting recurring routines that stay calm.</desc>
+  <rect width="1024" height="1024" rx="224" fill="#F6F4EC"/>
+  <path d="M330 566c-74-95-38-232 78-279 128-52 259 34 276 159 13 97-41 198-145 257" fill="none" stroke="#60816B" stroke-width="82" stroke-linecap="round"/>
+  <path d="M693 429c48 117 7 240-96 292-88 45-191 21-262-61" fill="none" stroke="#466D68" stroke-width="82" stroke-linecap="round"/>
+  <path d="M372 532l106 106 206-235" fill="none" stroke="#1D1F1C" stroke-width="68" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M651 316l75 29-51 62" fill="none" stroke="#60816B" stroke-width="54" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

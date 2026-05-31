@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">留白日 logo</title>
+  <desc id="desc">A warm ivory app icon with a sage open circle, a quiet page margin, and a small ink check.</desc>
+  <rect width="1024" height="1024" rx="224" fill="#F6F4EC"/>
+  <path d="M514 184c181 0 328 147 328 328S695 840 514 840 186 693 186 512 333 184 514 184Z" fill="#C8D1BE"/>
+  <path d="M514 282c127 0 230 103 230 230S641 742 514 742 284 639 284 512 387 282 514 282Z" fill="#FFFDF5"/>
+  <path d="M334 304c45-51 108-83 180-83 159 0 288 129 288 288 0 45-10 88-29 126" fill="none" stroke="#60816B" stroke-width="72" stroke-linecap="round"/>
+  <path d="M385 523l91 91 184-214" fill="none" stroke="#1D1F1C" stroke-width="72" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="361" cy="336" r="28" fill="#D5A44D"/>
+</svg>

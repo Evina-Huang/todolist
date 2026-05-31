@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" role="img" aria-labelledby="title desc">
+  <title id="title">一页 logo</title>
+  <desc id="desc">A single warm page with a folded corner, two task lines, and a calm check mark.</desc>
+  <rect width="1024" height="1024" rx="224" fill="#EEF2EA"/>
+  <path d="M306 188h300l142 142v506H306V188Z" fill="#FFFDF5"/>
+  <path d="M606 188v142h142" fill="#DAD9CC"/>
+  <path d="M392 420h238M392 533h238" stroke="#C8D1BE" stroke-width="46" stroke-linecap="round"/>
+  <path d="M383 671l82 82 178-206" fill="none" stroke="#60816B" stroke-width="68" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="670" cy="693" r="35" fill="#C78362"/>
+</svg>
