@@ -68,16 +68,18 @@ struct TodayView: View {
     }
 
     private var composer: some View {
-        HStack(spacing: 12) {
+        HStack(alignment: .center, spacing: 12) {
             Image(systemName: "plus.circle.fill")
                 .font(.title3)
                 .foregroundStyle(QuietColor.sage)
 
-            TextField("添加待办", text: $draft)
+            TextField("添加待办", text: $draft, axis: .vertical)
                 .font(.system(size: 19, weight: .regular))
-                .lineLimit(1)
+                .lineLimit(nil)
                 .submitLabel(.done)
                 .focused($isInputFocused)
+                .fixedSize(horizontal: false, vertical: true)
+                .layoutPriority(1)
                 .onSubmit(addDraft)
                 .onChange(of: draft) { _, newValue in
                     guard newValue.rangeOfCharacter(from: .newlines) != nil else { return }
