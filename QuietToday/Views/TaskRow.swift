@@ -36,16 +36,17 @@ struct TaskRow: View {
             .buttonStyle(.plain)
             .accessibilityLabel(task.isCompleted ? "标记为未完成" : "标记为完成")
 
-            HStack(alignment: .firstTextBaseline, spacing: 10) {
+            HStack(alignment: .top, spacing: 10) {
                 VStack(alignment: .leading, spacing: 6) {
-                    TextField("待办内容", text: $draftTitle)
+                    TextField("待办内容", text: $draftTitle, axis: .vertical)
                         .font(.system(size: 18, weight: .regular))
-                        .lineLimit(1)
+                        .lineLimit(nil)
                         .foregroundStyle(task.isCompleted ? QuietColor.secondaryInk.opacity(0.62) : QuietColor.ink)
                         .strikethrough(task.isCompleted, color: QuietColor.secondaryInk.opacity(0.62))
                         .textFieldStyle(.plain)
                         .submitLabel(.done)
                         .focused($isTitleFocused)
+                        .fixedSize(horizontal: false, vertical: true)
                         .onTapGesture {
                             editingTaskID = task.id
                         }
@@ -68,6 +69,8 @@ struct TaskRow: View {
                             )
                     }
                 }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .layoutPriority(1)
 
                 Spacer(minLength: 12)
 
@@ -75,6 +78,8 @@ struct TaskRow: View {
                     Text(reminder.timeLabel)
                         .font(.subheadline.weight(.medium))
                         .foregroundStyle(task.isCompleted ? QuietColor.secondaryInk.opacity(0.56) : QuietColor.secondaryInk)
+                        .fixedSize(horizontal: true, vertical: false)
+                        .padding(.top, 2)
                 }
             }
             .contentShape(Rectangle())

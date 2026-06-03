@@ -18,10 +18,11 @@ struct TaskDetailView: View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("待办内容", text: $title)
+                    TextField("待办内容", text: $title, axis: .vertical)
                         .font(.title3.weight(.semibold))
-                        .lineLimit(1)
+                        .lineLimit(nil)
                         .foregroundStyle(QuietColor.ink)
+                        .fixedSize(horizontal: false, vertical: true)
                         .onChange(of: title) { _, newValue in
                             guard newValue.rangeOfCharacter(from: .newlines) != nil else { return }
                             title = TodoTask.sanitizedTitle(newValue)
