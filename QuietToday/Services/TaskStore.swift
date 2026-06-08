@@ -118,7 +118,7 @@ final class TaskStore: ObservableObject {
         frequency: RoutineFrequency,
         weekday: Int,
         monthDay: Int,
-        reminderTime: Date?
+        reminders: [RoutineReminder]
     ) -> Routine? {
         let trimmedTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
         guard !trimmedTitle.isEmpty else { return nil }
@@ -128,7 +128,7 @@ final class TaskStore: ObservableObject {
             frequency: frequency,
             weekday: max(1, min(7, weekday)),
             monthDay: max(1, min(31, monthDay)),
-            reminderTime: reminderTime
+            reminders: reminders
         )
         routines.append(routine)
         saveRoutines()
@@ -143,7 +143,7 @@ final class TaskStore: ObservableObject {
         frequency: RoutineFrequency,
         weekday: Int,
         monthDay: Int,
-        reminderTime: Date?
+        reminders: [RoutineReminder]
     ) -> Routine? {
         let trimmedTitle = TodoTask.sanitizedTitle(title)
         guard !trimmedTitle.isEmpty else { return nil }
@@ -155,13 +155,13 @@ final class TaskStore: ObservableObject {
             frequency: frequency,
             weekday: max(1, min(7, weekday)),
             monthDay: max(1, min(31, monthDay)),
-            reminderTime: reminderTime
+            reminders: reminders
         )
         routines.append(routine)
 
         let dueDate = tasks[taskIndex].dueDate
         tasks[taskIndex].title = trimmedTitle
-        tasks[taskIndex].reminder = routine.reminder(on: dueDate, calendar: calendar)
+        tasks[taskIndex].reminder = routine.taskReminder(on: dueDate, calendar: calendar)
 
         if routine.occurs(on: dueDate, calendar: calendar) {
             tasks[taskIndex].source = .routine(
@@ -215,7 +215,7 @@ final class TaskStore: ObservableObject {
                 TodoTask(
                     title: routine.title,
                     dueDate: today,
-                    reminder: routine.reminder(on: today, calendar: calendar),
+                    reminder: routine.taskReminder(on: today, calendar: calendar),
                     source: .routine(routineID: routine.id, occurrenceKey: key)
                 )
             )
@@ -265,7 +265,7 @@ final class TaskStore: ObservableObject {
         }
 
         tasks[index].title = routine.title
-        tasks[index].reminder = routine.reminder(on: today, calendar: calendar)
+        tasks[index].reminder = routine.taskReminder(on: today, calendar: calendar)
         saveTasks()
     }
 
