@@ -12,6 +12,7 @@ struct TodoTask: Identifiable, Codable, Equatable {
     var dueDate: Date
     var completedAt: Date?
     var skippedAt: Date?
+    var pinnedAt: Date?
     var reminder: Reminder?
     var source: TaskSource
 
@@ -22,6 +23,7 @@ struct TodoTask: Identifiable, Codable, Equatable {
         dueDate: Date = Date(),
         completedAt: Date? = nil,
         skippedAt: Date? = nil,
+        pinnedAt: Date? = nil,
         reminder: Reminder? = nil,
         source: TaskSource = .manual
     ) {
@@ -31,6 +33,7 @@ struct TodoTask: Identifiable, Codable, Equatable {
         self.dueDate = dueDate
         self.completedAt = completedAt
         self.skippedAt = skippedAt
+        self.pinnedAt = pinnedAt
         self.reminder = reminder
         self.source = source
     }
@@ -49,6 +52,10 @@ struct TodoTask: Identifiable, Codable, Equatable {
 
     var isSkipped: Bool {
         skippedAt != nil
+    }
+
+    var isPinned: Bool {
+        pinnedAt != nil
     }
 
     var isRoutineInstance: Bool {

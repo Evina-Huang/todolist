@@ -9,42 +9,78 @@
 /* Begin PBXBuildFile section */
 		056515BB6C2193F46B2B75F0 /* TaskDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AE841D0A24CC97866D84CE4 /* TaskDetailView.swift */; };
 		0CEBE6FF13C3EC6BE570AA10 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FDBB15775273546535DFD6 /* TodayView.swift */; };
+		0EA3FD7864CDA33E53B8A541 /* QuietTodayWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 23ED4B61EF0D6FD606ADFD24 /* QuietTodayWidget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		2838ABE6B9B83F516D68F050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 506A9EF603284720F80EF123 /* Assets.xcassets */; };
+		2B9D6A828E5AAA8AA7F52BEC /* TodayWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FEE2931E1C6BB3C1CF8A64F /* TodayWidget.swift */; };
 		305EAD52994A311311EFA1E5 /* QuietTodayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C21AA45D9A46E81984E62355 /* QuietTodayApp.swift */; };
-		3B57A43919BBE6DB78FB1B45 /* TaskReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B414C3981F9186B2853D1E2 /* TaskReminderView.swift */; };
+		49C1714EE8CA5C40AB2FA9B4 /* TodayWidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135338AB632B285EB3AA926 /* TodayWidgetSnapshot.swift */; };
+		4C4A997A084D9B27BB5C8174 /* TodayWidgetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A01DF5DDBDA9FE5CB3EFCA /* TodayWidgetView.swift */; };
 		4E87DDD7C3C3A6E7A2B3A446 /* RoutineEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FF84B56A57FF3088B4470FD /* RoutineEditorView.swift */; };
 		51D07918CAF6FA00FDE5C594 /* DesignSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12257D5A6AD9900EB7EC6FA9 /* DesignSystem.swift */; };
 		553DFE940A41E34F20896D35 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BF14CC39D8E3F8E0E664EFC /* NotificationScheduler.swift */; };
 		57F734D91FE9AC41DE295200 /* TaskStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FD4C78A4AC25FBF14A90958 /* TaskStore.swift */; };
 		A6B320FE8668D928B8D7C2CC /* RoutineRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7851091BD3CF1C734B3358 /* RoutineRow.swift */; };
+		BE29EE949D4708540558392F /* TaskReminderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A49BEEF24803F8244F4185B5 /* TaskReminderView.swift */; };
 		E0489FDB9D769463CCF46661 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9C6F334E4235805A64D56FA /* DateFormatters.swift */; };
 		E66F05DDE981F5871818C1AF /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92C7D054EC412F0AA4138130 /* Reminder.swift */; };
 		E745C3B0C763FD56991739C7 /* TodoTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0829FD528523F210CAF39637 /* TodoTask.swift */; };
 		E87F90275D0F89515BF36DFD /* TaskRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F17D62C21BD8ABA7520528F /* TaskRow.swift */; };
 		EB0DEBF1ABC3DAEC9BEFA477 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 992FD3C1C884F01BE1A5FB64 /* RootView.swift */; };
+		F9788467A3898154A055E6BE /* TodayWidgetSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5135338AB632B285EB3AA926 /* TodayWidgetSnapshot.swift */; };
 		FD94F844D72526D9421A1C37 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = A13759AD93C8531462DF38D6 /* Routine.swift */; };
 		FFB8A154419CDB0222EDF617 /* RoutineListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17A489CFB394F7ECB0E1043C /* RoutineListView.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		5398A6B57A87C69CD4575AE5 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E19928DCC2EF23918DF55402 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4A1E734619F4641586123991;
+			remoteInfo = QuietTodayWidget;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		948D5564A5CAAC09AD8330A9 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0EA3FD7864CDA33E53B8A541 /* QuietTodayWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		0680C357F919C978FCFCFB98 /* QuietTodayWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuietTodayWidget.entitlements; sourceTree = "<group>"; };
 		0829FD528523F210CAF39637 /* TodoTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTask.swift; sourceTree = "<group>"; };
 		0FD4C78A4AC25FBF14A90958 /* TaskStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskStore.swift; sourceTree = "<group>"; };
 		12257D5A6AD9900EB7EC6FA9 /* DesignSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignSystem.swift; sourceTree = "<group>"; };
 		17A489CFB394F7ECB0E1043C /* RoutineListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineListView.swift; sourceTree = "<group>"; };
+		23ED4B61EF0D6FD606ADFD24 /* QuietTodayWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = QuietTodayWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F17D62C21BD8ABA7520528F /* TaskRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskRow.swift; sourceTree = "<group>"; };
 		3E5E0CA69FDAD5FC4F294A9B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
-		4B414C3981F9186B2853D1E2 /* TaskReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskReminderView.swift; sourceTree = "<group>"; };
+		40A01DF5DDBDA9FE5CB3EFCA /* TodayWidgetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetView.swift; sourceTree = "<group>"; };
 		506A9EF603284720F80EF123 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5135338AB632B285EB3AA926 /* TodayWidgetSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetSnapshot.swift; sourceTree = "<group>"; };
 		53946ADA3C1B978066B4B6CD /* QuietToday.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QuietToday.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7BF14CC39D8E3F8E0E664EFC /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
 		7E7851091BD3CF1C734B3358 /* RoutineRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineRow.swift; sourceTree = "<group>"; };
+		7FEE2931E1C6BB3C1CF8A64F /* TodayWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidget.swift; sourceTree = "<group>"; };
 		8FF84B56A57FF3088B4470FD /* RoutineEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoutineEditorView.swift; sourceTree = "<group>"; };
 		92C7D054EC412F0AA4138130 /* Reminder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reminder.swift; sourceTree = "<group>"; };
 		992FD3C1C884F01BE1A5FB64 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		9AE841D0A24CC97866D84CE4 /* TaskDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDetailView.swift; sourceTree = "<group>"; };
 		A13759AD93C8531462DF38D6 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+		A49BEEF24803F8244F4185B5 /* TaskReminderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskReminderView.swift; sourceTree = "<group>"; };
 		C1FDBB15775273546535DFD6 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		C21AA45D9A46E81984E62355 /* QuietTodayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuietTodayApp.swift; sourceTree = "<group>"; };
+		D5F4838714B2EAD0BD16631E /* QuietToday.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QuietToday.entitlements; sourceTree = "<group>"; };
+		E3C0BFD832100113F209F073 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		F9C6F334E4235805A64D56FA /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -59,10 +95,20 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		17DB7C954B61014CB0245BFE /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				E3C0BFD832100113F209F073 /* Info.plist */,
+				0680C357F919C978FCFCFB98 /* QuietTodayWidget.entitlements */,
+			);
+			path = Support;
+			sourceTree = "<group>";
+		};
 		253514F08FEA5884D0BD011A /* Products */ = {
 			isa = PBXGroup;
 			children = (
 				53946ADA3C1B978066B4B6CD /* QuietToday.app */,
+				23ED4B61EF0D6FD606ADFD24 /* QuietTodayWidget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,6 +118,7 @@
 			children = (
 				506A9EF603284720F80EF123 /* Assets.xcassets */,
 				3E5E0CA69FDAD5FC4F294A9B /* Info.plist */,
+				D5F4838714B2EAD0BD16631E /* QuietToday.entitlements */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -80,8 +127,27 @@
 			isa = PBXGroup;
 			children = (
 				D827BCFC5793B4CF2028CC65 /* QuietToday */,
+				6F92A6B2C5233381454EF244 /* QuietTodayWidget */,
 				253514F08FEA5884D0BD011A /* Products */,
 			);
+			sourceTree = "<group>";
+		};
+		66AD861BBE6273B98662C369 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				5135338AB632B285EB3AA926 /* TodayWidgetSnapshot.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		6F92A6B2C5233381454EF244 /* QuietTodayWidget */ = {
+			isa = PBXGroup;
+			children = (
+				7FEE2931E1C6BB3C1CF8A64F /* TodayWidget.swift */,
+				17DB7C954B61014CB0245BFE /* Support */,
+				FAA3EE977F7DC6519CACED83 /* Views */,
+			);
+			path = QuietTodayWidget;
 			sourceTree = "<group>";
 		};
 		7C47E5DF00A37C2A3A31EBB3 /* App */ = {
@@ -111,7 +177,7 @@
 				17A489CFB394F7ECB0E1043C /* RoutineListView.swift */,
 				7E7851091BD3CF1C734B3358 /* RoutineRow.swift */,
 				9AE841D0A24CC97866D84CE4 /* TaskDetailView.swift */,
-				4B414C3981F9186B2853D1E2 /* TaskReminderView.swift */,
+				A49BEEF24803F8244F4185B5 /* TaskReminderView.swift */,
 				2F17D62C21BD8ABA7520528F /* TaskRow.swift */,
 				C1FDBB15775273546535DFD6 /* TodayView.swift */,
 			);
@@ -124,25 +190,53 @@
 				7C47E5DF00A37C2A3A31EBB3 /* App */,
 				0744E229EEE1329D9DBF7718 /* Models */,
 				B77E157573C36123E37FF415 /* Services */,
+				66AD861BBE6273B98662C369 /* Shared */,
 				5D4579B3D5F19B2E32078BA5 /* Support */,
 				BDD41499BD86925AE3F911FD /* Views */,
 			);
 			path = QuietToday;
 			sourceTree = "<group>";
 		};
+		FAA3EE977F7DC6519CACED83 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				40A01DF5DDBDA9FE5CB3EFCA /* TodayWidgetView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4A1E734619F4641586123991 /* QuietTodayWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3728D99F074D848C68484910 /* Build configuration list for PBXNativeTarget "QuietTodayWidget" */;
+			buildPhases = (
+				000373C61F52EE4ED08F3B35 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = QuietTodayWidget;
+			packageProductDependencies = (
+			);
+			productName = QuietTodayWidget;
+			productReference = 23ED4B61EF0D6FD606ADFD24 /* QuietTodayWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		5F9CC7B86B9E5A157E13188F /* QuietToday */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0CC132F61C9C5236ECCFBA4F /* Build configuration list for PBXNativeTarget "QuietToday" */;
 			buildPhases = (
 				BCF6E7A458F7DFC2A9E68BBC /* Sources */,
 				FA1F8CBD9D6FAE2E9369CA18 /* Resources */,
+				948D5564A5CAAC09AD8330A9 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				15393A4E82E3D7A7A7EA3D58 /* PBXTargetDependency */,
 			);
 			name = QuietToday;
 			packageProductDependencies = (
@@ -175,6 +269,7 @@
 			projectRoot = "";
 			targets = (
 				5F9CC7B86B9E5A157E13188F /* QuietToday */,
+				4A1E734619F4641586123991 /* QuietTodayWidget */,
 			);
 		};
 /* End PBXProject section */
@@ -191,6 +286,16 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		000373C61F52EE4ED08F3B35 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2B9D6A828E5AAA8AA7F52BEC /* TodayWidget.swift in Sources */,
+				49C1714EE8CA5C40AB2FA9B4 /* TodayWidgetSnapshot.swift in Sources */,
+				4C4A997A084D9B27BB5C8174 /* TodayWidgetView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BCF6E7A458F7DFC2A9E68BBC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,21 +311,31 @@
 				FFB8A154419CDB0222EDF617 /* RoutineListView.swift in Sources */,
 				A6B320FE8668D928B8D7C2CC /* RoutineRow.swift in Sources */,
 				056515BB6C2193F46B2B75F0 /* TaskDetailView.swift in Sources */,
-				3B57A43919BBE6DB78FB1B45 /* TaskReminderView.swift in Sources */,
+				BE29EE949D4708540558392F /* TaskReminderView.swift in Sources */,
 				E87F90275D0F89515BF36DFD /* TaskRow.swift in Sources */,
 				57F734D91FE9AC41DE295200 /* TaskStore.swift in Sources */,
 				0CEBE6FF13C3EC6BE570AA10 /* TodayView.swift in Sources */,
+				F9788467A3898154A055E6BE /* TodayWidgetSnapshot.swift in Sources */,
 				E745C3B0C763FD56991739C7 /* TodoTask.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		15393A4E82E3D7A7A7EA3D58 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4A1E734619F4641586123991 /* QuietTodayWidget */;
+			targetProxy = 5398A6B57A87C69CD4575AE5 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
 		3E03CFAA641EF53F6068E089 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QuietToday/Support/QuietToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5WF2DNSHC6;
 				INFOPLIST_FILE = QuietToday/Support/Info.plist;
@@ -234,6 +349,25 @@
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
+		};
+		49A8E891C26F753FE8C171F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = QuietTodayWidget/Support/QuietTodayWidget.entitlements;
+				DEVELOPMENT_TEAM = 5WF2DNSHC6;
+				INFOPLIST_FILE = QuietTodayWidget/Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.evina.quiettoday.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
 		};
 		678B382728645CFE7F30C61B /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -364,6 +498,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QuietToday/Support/QuietToday.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5WF2DNSHC6;
 				INFOPLIST_FILE = QuietToday/Support/Info.plist;
@@ -377,6 +512,25 @@
 				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
+		};
+		BC3FF04C5EE54D36CA41DAE7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = QuietTodayWidget/Support/QuietTodayWidget.entitlements;
+				DEVELOPMENT_TEAM = 5WF2DNSHC6;
+				INFOPLIST_FILE = QuietTodayWidget/Support/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.evina.quiettoday.widget;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
 		};
 /* End XCBuildConfiguration section */
 
@@ -395,6 +549,15 @@
 			buildConfigurations = (
 				678B382728645CFE7F30C61B /* Debug */,
 				856B9A5C0DFBE7A58059A3B3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		3728D99F074D848C68484910 /* Build configuration list for PBXNativeTarget "QuietTodayWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BC3FF04C5EE54D36CA41DAE7 /* Debug */,
+				49A8E891C26F753FE8C171F1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;

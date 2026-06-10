@@ -14,10 +14,27 @@ targets:
     platform: iOS
     sources:
       - QuietToday
+    dependencies:
+      - target: QuietTodayWidget
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.evina.quiettoday
         INFOPLIST_FILE: QuietToday/Support/Info.plist
+        CODE_SIGN_ENTITLEMENTS: QuietToday/Support/QuietToday.entitlements
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        SWIFT_VERSION: "5.0"
+        TARGETED_DEVICE_FAMILY: "1"
+  QuietTodayWidget:
+    type: app-extension
+    platform: iOS
+    sources:
+      - QuietTodayWidget
+      - QuietToday/Shared
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.evina.quiettoday.widget
+        INFOPLIST_FILE: QuietTodayWidget/Support/Info.plist
+        CODE_SIGN_ENTITLEMENTS: QuietTodayWidget/Support/QuietTodayWidget.entitlements
+        SKIP_INSTALL: YES
         SWIFT_VERSION: "5.0"
         TARGETED_DEVICE_FAMILY: "1"

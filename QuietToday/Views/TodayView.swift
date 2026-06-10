@@ -7,6 +7,7 @@ struct TodayView: View {
     @State private var draft = ""
     @State private var reminderTask: TodoTask?
     @State private var editingTaskID: TodoTask.ID?
+    @State private var isSubmittingDraft = false
 
     private var tasks: [TodoTask] {
         store.todayTasks
@@ -41,15 +42,6 @@ struct TodayView: View {
             .quietScreen()
             .navigationBarTitleDisplayMode(.inline)
             .toolbar(.hidden, for: .navigationBar)
-            .toolbar {
-                ToolbarItemGroup(placement: .keyboard) {
-                    Spacer()
-                    Button("收起") {
-                        isInputFocused = false
-                    }
-                    .fontWeight(.medium)
-                }
-            }
             .sheet(item: $reminderTask) { task in
                 TaskReminderView(task: task)
                     .presentationDetents([.medium])
@@ -83,7 +75,7 @@ struct TodayView: View {
                 .onSubmit(addDraft)
                 .onChange(of: draft) { _, newValue in
                     guard newValue.rangeOfCharacter(from: .newlines) != nil else { return }
-                    draft = TodoTask.sanitizedTitle(newValue)
+                    addDraft(from: newValue)
                 }
 
             Button(action: addDraft) {
@@ -147,8 +139,7 @@ struct TodayView: View {
             },
             saveTitle: { title in
                 store.updateTaskTitle(title, for: task)
-            },
-            pinTask: nil
+            }
         )
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(QuietColor.background)
@@ -178,6 +169,13 @@ struct TodayView: View {
         }
         .swipeActions(edge: .leading, allowsFullSwipe: false) {
             Button {
+                store.togglePin(for: task)
+            } label: {
+                Label(task.isPinned ? "取消置顶" : "置顶", systemImage: task.isPinned ? "pin.slash.fill" : "pin.fill")
+            }
+            .tint(QuietColor.secondaryInk)
+
+            Button {
                 reminderTask = task
             } label: {
                 Label(task.reminder == nil ? "提醒" : "改提醒", systemImage: "bell")
@@ -188,12 +186,23 @@ struct TodayView: View {
     }
 
     private func addDraft() {
-        let title = TodoTask.sanitizedTitle(draft)
+        addDraft(from: draft)
+    }
+
+    private func addDraft(from text: String) {
+        guard !isSubmittingDraft else { return }
+
+        let title = TodoTask.sanitizedTitle(text)
         guard !title.isEmpty else { return }
 
+        isSubmittingDraft = true
         store.addTask(title: title)
         draft = ""
         isInputFocused = true
+
+        DispatchQueue.main.async {
+            isSubmittingDraft = false
+        }
     }
 
     private func deleteTask(_ task: TodoTask) {

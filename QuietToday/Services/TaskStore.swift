@@ -1,4 +1,5 @@
 import Foundation
+import WidgetKit
 
 @MainActor
 final class TaskStore: ObservableObject {
@@ -27,6 +28,17 @@ final class TaskStore: ObservableObject {
         return tasks
             .filter { calendar.isDate($0.dueDate, inSameDayAs: today) && !$0.isSkipped }
             .sorted { first, second in
+                switch (first.pinnedAt, second.pinnedAt) {
+                case let (.some(lhs), .some(rhs)):
+                    if lhs != rhs { return lhs > rhs }
+                case (.some, .none):
+                    return true
+                case (.none, .some):
+                    return false
+                case (.none, .none):
+                    break
+                }
+
                 switch (first.reminder?.date, second.reminder?.date) {
                 case let (.some(lhs), .some(rhs)):
                     if lhs != rhs { return lhs < rhs }
@@ -54,6 +66,7 @@ final class TaskStore: ObservableObject {
 
     func refreshToday() async {
         materializeRoutines(for: Date())
+        publishTodayWidgetSnapshot()
     }
 
     func addTask(title: String) {
@@ -73,6 +86,12 @@ final class TaskStore: ObservableObject {
     func toggleCompletion(for task: TodoTask) {
         guard var updated = tasks.first(where: { $0.id == task.id }) else { return }
         updated.completedAt = updated.completedAt == nil ? Date() : nil
+        updateTask(updated)
+    }
+
+    func togglePin(for task: TodoTask) {
+        guard var updated = tasks.first(where: { $0.id == task.id }) else { return }
+        updated.pinnedAt = updated.pinnedAt == nil ? Date() : nil
         updateTask(updated)
     }
 
@@ -273,14 +292,37 @@ final class TaskStore: ObservableObject {
         tasks = decode([TodoTask].self, from: tasksURL) ?? []
         routines = decode([Routine].self, from: routinesURL) ?? []
         materializeRoutines(for: Date())
+        publishTodayWidgetSnapshot()
     }
 
     private func saveTasks() {
         encode(tasks, to: tasksURL)
+        publishTodayWidgetSnapshot()
     }
 
     private func saveRoutines() {
         encode(routines, to: routinesURL)
+    }
+
+    private func publishTodayWidgetSnapshot() {
+        let todayTasks = todayTasks
+        let incompleteTasks = todayTasks.filter { !$0.isCompleted }
+        let snapshot = TodayWidgetSnapshot(
+            date: Date(),
+            totalCount: todayTasks.count,
+            completedCount: todayTasks.filter(\.isCompleted).count,
+            tasks: incompleteTasks.prefix(3).map { task in
+                TodayWidgetTask(
+                    id: task.id,
+                    title: task.title,
+                    reminderDate: task.reminder?.date,
+                    isRoutineInstance: task.isRoutineInstance
+                )
+            }
+        )
+
+        TodayWidgetSnapshotStore.save(snapshot)
+        WidgetCenter.shared.reloadTimelines(ofKind: "QuietTodayWidget")
     }
 
     private func decode<T: Decodable>(_ type: T.Type, from url: URL) -> T? {
